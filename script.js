@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeMenuToggle();
     initializeSearch();
     initializeFormValidation();
+    loadStudentsFromStorage();
+    initializeAddStudentButton();
 });
 
 /* =============================================
@@ -556,5 +558,178 @@ document.addEventListener('click', function(e) {
         saveUserPreference('lastActiveSection', section);
     }
 });
+
+/* =============================================
+   STUDENT MANAGEMENT - ADD & SAVE
+   ============================================= */
+
+function initializeAddStudentButton() {
+    const addButtons = document.querySelectorAll('[class*="Add New Student"]');
+    const allAddButtons = document.querySelectorAll('.btn-primary');
+
+    allAddButtons.forEach(button => {
+        if (button.textContent.includes('Add New Student')) {
+            button.addEventListener('click', openAddStudentModal);
+        }
+    });
+}
+
+function openAddStudentModal() {
+    const modalHTML = `
+        <div style="background: white; padding: 2rem; border-radius: 1rem;">
+            <h2 style="margin-bottom: 1.5rem; color: #2563eb;">Add New Student</h2>
+            <form id="addStudentForm" style="display: grid; gap: 1rem;">
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Roll Number:</label>
+                    <input type="text" id="rollNo" placeholder="e.g., 005" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Student Name:</label>
+                    <input type="text" id="studentName" placeholder="Full Name" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Department:</label>
+                    <select id="department" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                        <option>English Language</option>
+                        <option>IT & Programming</option>
+                        <option>Web Development</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Class Level:</label>
+                    <select id="classLevel" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email:</label>
+                    <input type="email" id="studentEmail" placeholder="student@email.com" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Contact Number:</label>
+                    <input type="tel" id="studentContact" placeholder="+966-555-0000" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Admission Date:</label>
+                    <input type="date" id="admissionDate" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <button type="button" onclick="this.closest('[style*=\"background: white\"]').parentElement.remove()" style="padding: 0.75rem; background: #e5e7eb; color: #374151; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">Cancel</button>
+                    <button type="submit" style="padding: 0.75rem; background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">Add Student</button>
+                </div>
+            </form>
+        </div>
+    `;
+
+    openModal(modalHTML);
+
+    document.getElementById('addStudentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        addNewStudent();
+    });
+}
+
+function addNewStudent() {
+    const student = {
+        rollNo: document.getElementById('rollNo').value,
+        name: document.getElementById('studentName').value,
+        department: document.getElementById('department').value,
+        classLevel: document.getElementById('classLevel').value,
+        email: document.getElementById('studentEmail').value,
+        contact: document.getElementById('studentContact').value,
+        admissionDate: document.getElementById('admissionDate').value,
+        status: 'Active'
+    };
+
+    // Get existing students from localStorage
+    let students = JSON.parse(localStorage.getItem('students')) || [];
+
+    // Add new student
+    students.push(student);
+
+    // Save to localStorage
+    localStorage.setItem('students', JSON.stringify(students));
+
+    showNotification('Student added successfully!', 'success');
+
+    // Close modal
+    document.querySelector('.modal').remove();
+
+    // Reload students table if on students page
+    const studentsSection = document.getElementById('students');
+    if (studentsSection && studentsSection.classList.contains('active')) {
+        loadStudentsFromStorage();
+    }
+}
+
+function loadStudentsFromStorage() {
+    const students = JSON.parse(localStorage.getItem('students')) || [];
+
+    if (students.length === 0) return;
+
+    // Find the students table
+    const studentsSection = document.getElementById('students');
+    if (!studentsSection) return;
+
+    const table = studentsSection.querySelector('.data-table tbody');
+    if (!table) return;
+
+    // Clear existing rows
+    table.innerHTML = '';
+
+    // Add stored students
+    students.forEach(student => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${student.rollNo}</td>
+            <td>${student.name}</td>
+            <td>${student.department}</td>
+            <td>${student.classLevel}</td>
+            <td>${student.email}</td>
+            <td>${student.contact}</td>
+            <td>${student.admissionDate}</td>
+            <td><span class="status-badge active">Active</span></td>
+            <td><button class="action-btn" onclick="deleteStudent('${student.rollNo}')"><i class="fas fa-trash"></i></button></td>
+        `;
+        table.appendChild(row);
+    });
+
+    // Also add original sample data
+    const sampleStudents = [
+        ['001', 'Ahmed Hassan', 'English Language', 'Advanced', 'ahmed@email.com', '+966-555-0123', '2026-01-15'],
+        ['002', 'Fatima Al-Mansouri', 'IT & Programming', 'Intermediate', 'fatima@email.com', '+966-555-0124', '2026-02-20'],
+        ['003', 'Mohammed Ali', 'Web Development', 'Beginner', 'mohammed@email.com', '+966-555-0125', '2026-03-10'],
+        ['004', 'Noor Ibrahim', 'English Language', 'Beginner', 'noor@email.com', '+966-555-0126', '2026-03-25']
+    ];
+
+    sampleStudents.forEach(data => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${data[0]}</td>
+            <td>${data[1]}</td>
+            <td>${data[2]}</td>
+            <td>${data[3]}</td>
+            <td>${data[4]}</td>
+            <td>${data[5]}</td>
+            <td>${data[6]}</td>
+            <td><span class="status-badge active">Active</span></td>
+            <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+        `;
+        table.appendChild(row);
+    });
+}
+
+function deleteStudent(rollNo) {
+    if (confirm('Are you sure you want to delete this student?')) {
+        let students = JSON.parse(localStorage.getItem('students')) || [];
+        students = students.filter(s => s.rollNo !== rollNo);
+        localStorage.setItem('students', JSON.stringify(students));
+
+        showNotification('Student deleted successfully!', 'success');
+        loadStudentsFromStorage();
+    }
+}
 
 console.log('The Lighthouse Academy - Management System Initialized Successfully');
