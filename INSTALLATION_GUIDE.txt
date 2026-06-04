@@ -1,0 +1,415 @@
+# INSTALLATION & SETUP GUIDE
+# The Lighthouse Academy - Management System
+
+## 📋 Table of Contents
+1. System Requirements
+2. Installation Steps
+3. First Time Setup
+4. Configuration
+5. Troubleshooting
+6. Customization Guide
+
+---
+
+## 1. SYSTEM REQUIREMENTS
+
+### Minimum Requirements
+- **Operating System**: Windows 7+, macOS 10.10+, Linux (any modern distribution)
+- **Browser**: Chrome 60+, Firefox 55+, Safari 11+, Edge 79+
+- **RAM**: 512 MB minimum
+- **Storage**: 50 MB free space
+- **Internet**: Required for Font Awesome icons (optional, can use local copy)
+
+### Recommended Requirements
+- **Browser**: Latest Chrome, Firefox, Safari, or Edge
+- **RAM**: 2 GB or more
+- **Storage**: 100 MB free space
+- **Internet Connection**: For initial setup and updates
+
+### Browser Compatibility
+✅ Google Chrome (Latest)
+✅ Mozilla Firefox (Latest)
+✅ Safari (Latest)
+✅ Microsoft Edge (Latest)
+✅ Opera (Latest)
+⚠️ Internet Explorer 11 (Limited - not recommended)
+
+---
+
+## 2. INSTALLATION STEPS
+
+### Step 1: Download Files
+1. Download all files from the distribution package:
+   - index.html
+   - style.css
+   - script.js
+   - README.md
+   - config.json
+   - QUICKSTART.html
+
+### Step 2: Create Application Folder
+```
+C:\Users\[YourUsername]\Desktop\website.com\
+```
+Or any location of your choice.
+
+### Step 3: Place Files
+1. Copy all downloaded files into the folder
+2. Ensure all files are in the SAME directory
+3. Do NOT create subfolders for these main files
+
+### Step 4: Verify Installation
+Check that your folder contains:
+```
+website.com/
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+├── QUICKSTART.html
+└── config.json
+```
+
+### Step 5: Launch Application
+**Option A: Double-click**
+- Double-click `index.html` to open in default browser
+
+**Option B: Right-click and Select**
+- Right-click `index.html`
+- Select "Open with" → Choose your preferred browser
+
+**Option C: Drag and Drop**
+- Drag `index.html` into your browser window
+
+**Option D: From Browser Menu**
+- Open browser
+- Press Ctrl+O (or Cmd+O on Mac)
+- Navigate to and select `index.html`
+
+---
+
+## 3. FIRST TIME SETUP
+
+### Initial Launch
+When you first open the application:
+
+1. **Dashboard will load** with sample data
+2. **Sidebar navigation** will be on the left
+3. **All modules will be active** and ready to use
+4. **Sample data** is pre-populated for demonstration
+
+### Accessing Different Modules
+Click on any menu item in the left sidebar:
+- 🏠 Dashboard
+- 👥 Students Profile
+- 📋 Attendance
+- 💰 Fee Submission
+- 📈 Reports
+- 📅 Calendar & Schedule
+- 🎓 New Admissions
+- 🏢 Departments
+
+### First Actions
+1. **Explore Dashboard**: Review the overview statistics
+2. **Check Students**: Browse the student database
+3. **Test Search**: Try searching for a student
+4. **View Reports**: Generate a sample report
+5. **Check Calendar**: View upcoming events
+
+---
+
+## 4. CONFIGURATION
+
+### Changing Academy Name
+Edit `index.html` and find:
+```html
+<h1>The Lighthouse Academy</h1>
+```
+Replace with your academy name.
+
+### Changing Colors
+Edit `style.css` and modify the CSS variables:
+```css
+:root {
+    --primary: #2563eb;          /* Main blue color */
+    --secondary: #7c3aed;        /* Purple accent */
+    --success: #10b981;          /* Green */
+    --warning: #f59e0b;          /* Orange */
+    --danger: #ef4444;           /* Red */
+}
+```
+
+### Changing Logo/Icon
+Replace the lightbulb icon in `index.html`:
+```html
+<i class="fas fa-lightbulb"></i>
+```
+With any Font Awesome icon. Visit: https://fontawesome.com/icons
+
+### Updating Sample Data
+1. Open `index.html` in a text editor
+2. Find the table with sample student data
+3. Replace names, emails, contact numbers with your data
+4. Save and refresh the browser
+
+### Adding/Removing Departments
+Edit the departments section in `index.html`:
+```html
+<div class="dept-card">
+    <!-- Copy and modify this card -->
+</div>
+```
+
+---
+
+## 5. TROUBLESHOOTING
+
+### Issue: Page won't load or shows blank screen
+**Solution:**
+- Ensure all files are in the same folder
+- Check if JavaScript is enabled in browser settings
+- Try a different browser
+- Clear browser cache (Ctrl+Shift+Delete)
+
+### Issue: Icons not displaying
+**Solution:**
+- Check internet connection (icons load from Font Awesome CDN)
+- Or download Font Awesome and use local copy
+- Refresh the page (F5)
+
+### Issue: Styles not applying
+**Solution:**
+- Verify style.css is in the same folder
+- Check browser console for errors (F12)
+- Clear browser cache
+- Try opening in a different browser
+
+### Issue: Search or filters not working
+**Solution:**
+- Verify JavaScript is enabled
+- Check browser console (F12) for errors
+- Refresh the page
+- Try in a different browser
+
+### Issue: Navigation buttons not responding
+**Solution:**
+- Clear browser cache
+- Disable browser extensions
+- Try in incognito/private mode
+- Restart the browser
+
+### Issue: Mobile sidebar not appearing
+**Solution:**
+- Resize browser window to trigger mobile view
+- Check if hamburger menu (≡) is visible
+- Try on actual mobile device
+- Check browser's mobile emulation (F12)
+
+### Issue: Performance is slow
+**Solution:**
+- Close unused browser tabs
+- Disable unnecessary extensions
+- Clear browser cache
+- Use modern browser (Chrome or Firefox)
+- Ensure sufficient system RAM
+
+---
+
+## 6. CUSTOMIZATION GUIDE
+
+### Customizing Header
+Edit `index.html`:
+```html
+<header class="header">
+    <h1>Your Academy Name</h1>
+    <p class="subtitle">Your Tagline Here</p>
+</header>
+```
+
+### Adding New Navigation Items
+1. Add to sidebar in `index.html`:
+```html
+<li><a href="#newsection" class="nav-link" data-section="newsection">
+    <i class="fas fa-icon-name"></i> New Section
+</a></li>
+```
+
+2. Add corresponding section:
+```html
+<section id="newsection" class="section">
+    <!-- Your content here -->
+</section>
+```
+
+### Customizing Color Scheme
+Complete list of CSS variables in `style.css`:
+```css
+--primary: #2563eb              /* Main brand color */
+--primary-dark: #1e40af         /* Darker shade */
+--primary-light: #3b82f6        /* Lighter shade */
+--secondary: #7c3aed            /* Secondary color */
+--accent: #ec4899               /* Accent color */
+--success: #10b981              /* Success green */
+--warning: #f59e0b              /* Warning orange */
+--danger: #ef4444               /* Error red */
+--info: #06b6d4                 /* Info cyan */
+--dark: #1f2937                 /* Text dark */
+--gray: #6b7280                 /* Text gray */
+--light-gray: #e5e7eb           /* Light gray */
+--lighter-gray: #f3f4f6         /* Very light gray */
+--white: #ffffff                /* White */
+```
+
+### Adding New Statistics Cards
+In `index.html`, add to stats-grid:
+```html
+<div class="stat-card">
+    <div class="stat-icon" style="background: #YOUR_COLOR;">
+        <i class="fas fa-icon-name"></i>
+    </div>
+    <div class="stat-content">
+        <h3>123</h3>
+        <p>Your Label</p>
+    </div>
+</div>
+```
+
+### Customizing Font
+Edit `style.css`:
+```css
+body {
+    font-family: 'Your Font Name', fallback, sans-serif;
+}
+```
+
+### Adding Notifications
+Use JavaScript in console or script.js:
+```javascript
+showNotification('Your message', 'success');
+// Types: success, error, warning, info
+```
+
+---
+
+## 7. ADVANCED SETUP
+
+### Hosting on Web Server
+1. Upload all files to your web hosting server
+2. Ensure files are in the same directory
+3. Access via URL: `http://yoursite.com/index.html`
+
+### Local Testing
+Use Python Simple Server:
+```bash
+python -m http.server 8000
+# or Python 3
+python3 -m http.server 8000
+```
+Then visit: `http://localhost:8000/index.html`
+
+### Adding to Existing Website
+1. Create a folder: `yoursite.com/academy/`
+2. Place all files in that folder
+3. Link from main site: `<a href="/academy/index.html">Academy System</a>`
+
+---
+
+## 8. MAINTENANCE
+
+### Regular Updates
+- Check README.md for update information
+- Back up your data regularly
+- Clear browser cache monthly
+- Update browser to latest version
+
+### Performance Optimization
+- Minimize number of browser tabs
+- Disable unused extensions
+- Use latest browser version
+- Clear temporary files regularly
+
+### Security Notes
+- This is a frontend-only application
+- No sensitive data is stored locally (by default)
+- For production, integrate with secure backend
+- Always use HTTPS for live deployments
+
+---
+
+## 9. FILE DESCRIPTIONS
+
+### index.html (35 KB)
+Main application file containing all HTML structure, sections, and sample data.
+
+### style.css (20 KB)
+Complete styling, responsive design, animations, and color scheme.
+
+### script.js (17 KB)
+Interactive functionality: navigation, search, filters, notifications, data handling.
+
+### README.md (6 KB)
+Comprehensive documentation of all features and usage guide.
+
+### QUICKSTART.html (8 KB)
+Interactive quick start guide with step-by-step instructions.
+
+### config.json (3 KB)
+Configuration file with academy information and system settings.
+
+---
+
+## 10. GETTING HELP
+
+### Where to Find Information
+- **QUICKSTART.html** - Quick start guide (best for beginners)
+- **README.md** - Complete feature documentation
+- **config.json** - Configuration and system info
+- **Browser Console (F12)** - Error messages and debugging
+
+### Common Questions
+
+**Q: Can I add my own students?**
+A: Yes, edit the HTML table with your student data.
+
+**Q: Will the data save?**
+A: No, this version stores data in HTML. For persistent storage, add database backend.
+
+**Q: Can I export to Excel?**
+A: Currently exports to PDF. Excel export requires backend integration.
+
+**Q: Is this mobile friendly?**
+A: Yes, it's fully responsive and works on all devices.
+
+**Q: Can I use this offline?**
+A: Yes, except Font Awesome icons require internet.
+
+---
+
+## 11. FINAL CHECKLIST
+
+Before considering the setup complete:
+
+- [ ] All files are in the same folder
+- [ ] index.html opens in browser without errors
+- [ ] Sidebar navigation works
+- [ ] All modules are accessible
+- [ ] Search functionality works
+- [ ] Responsive design works (test with different screen sizes)
+- [ ] Browser console shows no errors (F12)
+- [ ] Sample data displays correctly
+- [ ] You've reviewed README.md
+- [ ] You understand the customization options
+
+---
+
+## Support & Documentation
+
+For detailed feature documentation, see: **README.md**
+For quick setup, see: **QUICKSTART.html**
+For system configuration, see: **config.json**
+
+---
+
+**Version**: 1.0.0
+**Last Updated**: June 4, 2026
+**© 2026 The Lighthouse Academy** - All Rights Reserved

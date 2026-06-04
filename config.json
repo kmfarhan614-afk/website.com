@@ -1,0 +1,207 @@
+{
+  "academy": {
+    "name": "The Lighthouse Academy",
+    "fullName": "The Lighthouse Academy for English Language and IT",
+    "abbreviation": "TLA",
+    "tagline": "English Language & IT Excellence",
+    "founded": 2020,
+    "version": "1.0.0",
+    "lastUpdated": "2026-06-04"
+  },
+  "system": {
+    "theme": {
+      "primary": "#2563eb",
+      "primaryDark": "#1e40af",
+      "primaryLight": "#3b82f6",
+      "secondary": "#7c3aed",
+      "accent": "#ec4899",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "danger": "#ef4444",
+      "info": "#06b6d4"
+    },
+    "typography": {
+      "fontFamily": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+      "fontMono": "Courier New, monospace"
+    }
+  },
+  "modules": {
+    "dashboard": {
+      "enabled": true,
+      "icon": "fa-home",
+      "label": "Dashboard",
+      "description": "Overview and quick access"
+    },
+    "studentsProfile": {
+      "enabled": true,
+      "icon": "fa-user-graduate",
+      "label": "Students Profile",
+      "description": "Student database management",
+      "features": [
+        "Search functionality",
+        "Filter by department",
+        "Filter by class",
+        "View student details",
+        "Add new students"
+      ]
+    },
+    "attendance": {
+      "enabled": true,
+      "icon": "fa-clipboard-list",
+      "label": "Attendance",
+      "description": "Track student attendance",
+      "features": [
+        "Daily attendance records",
+        "Time in/out logging",
+        "Remarks for absences",
+        "Filter by date",
+        "Filter by department"
+      ]
+    },
+    "feeSubmission": {
+      "enabled": true,
+      "icon": "fa-money-bill-wave",
+      "label": "Fee Submission",
+      "description": "Payment and fee management",
+      "features": [
+        "Track fee collection",
+        "Payment status monitoring",
+        "Record new payments",
+        "Download receipts",
+        "View payment history"
+      ]
+    },
+    "reports": {
+      "enabled": true,
+      "icon": "fa-chart-bar",
+      "label": "Reports",
+      "description": "Analytics and reporting",
+      "features": [
+        "Daily reports",
+        "Weekly reports",
+        "Monthly reports",
+        "PDF export",
+        "Statistics dashboard"
+      ]
+    },
+    "calendar": {
+      "enabled": true,
+      "icon": "fa-calendar-alt",
+      "label": "Calendar & Schedule",
+      "description": "Events and schedule management",
+      "features": [
+        "Calendar view",
+        "Event scheduling",
+        "Class timings",
+        "Important dates",
+        "Venue information"
+      ]
+    },
+    "admissions": {
+      "enabled": true,
+      "icon": "fa-file-invoice-dollar",
+      "label": "New Admissions",
+      "description": "Student admission management",
+      "features": [
+        "Application tracking",
+        "Status monitoring",
+        "Fee collection",
+        "Document management",
+        "Approval workflow"
+      ]
+    },
+    "departments": {
+      "enabled": true,
+      "icon": "fa-sitemap",
+      "label": "Departments",
+      "description": "Department management",
+      "departments": [
+        {
+          "id": 1,
+          "name": "English Language",
+          "students": 450,
+          "courses": 8,
+          "staff": 15,
+          "icon": "fa-book",
+          "color": "#FF6B6B"
+        },
+        {
+          "id": 2,
+          "name": "IT & Programming",
+          "students": 280,
+          "courses": 12,
+          "staff": 18,
+          "icon": "fa-laptop-code",
+          "color": "#4ECDC4"
+        },
+        {
+          "id": 3,
+          "name": "Web Development",
+          "students": 120,
+          "courses": 6,
+          "staff": 8,
+          "icon": "fa-globe",
+          "color": "#FFE66D"
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "totalStudents": 850,
+    "attendanceRate": "92%",
+    "pendingFees": "$45,230",
+    "totalDepartments": 12,
+    "activeClasses": 24
+  },
+  "features": {
+    "searchFunctionality": true,
+    "filterSystem": true,
+    "dateFiltering": true,
+    "pdfExport": true,
+    "dataExport": true,
+    "notifications": true,
+    "responsiveDesign": true,
+    "mobileOptimized": true,
+    "darkMode": false,
+    "multiLanguage": false,
+    "authentication": false,
+    "databaseIntegration": false
+  },
+  "browser_support": {
+    "chrome": "Full Support",
+    "firefox": "Full Support",
+    "safari": "Full Support",
+    "edge": "Full Support",
+    "ie11": "Limited Support"
+  },
+  "keyboard_shortcuts": {
+    "search": "Ctrl/Cmd + K",
+    "closeSidebar": "Esc",
+    "navigation": "Click sidebar items"
+  },
+  "responsive_breakpoints": {
+    "desktop": "1200px+",
+    "tablet": "768px - 1199px",
+    "mobile": "Below 768px"
+  },
+  "future_enhancements": [
+    "Database integration",
+    "User authentication",
+    "Real-time notifications",
+    "Excel export",
+    "Mobile app",
+    "SMS/Email alerts",
+    "Student portal",
+    "Parental access",
+    "Advanced analytics",
+    "Multi-language support"
+  ],
+  "files": {
+    "index.html": "Main application file",
+    "style.css": "Styling and responsive design",
+    "script.js": "Interactive functionality",
+    "README.md": "Detailed documentation",
+    "QUICKSTART.html": "Quick start guide",
+    "config.json": "Configuration file"
+  }
+}

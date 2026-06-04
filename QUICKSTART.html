@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide - The Lighthouse Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+
+        .steps {
+            background: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+        }
+
+        .btn-secondary:hover {
+            background: #f3f4f6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid #2563eb;
+        }
+
+        .feature-card h3 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #f59e0b;
+            margin: 1rem 0;
+        }
+
+        .highlight strong {
+            color: #92400e;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #10b981;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: #f3f4f6;
+            padding: 2rem;
+            text-align: center;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span>💡</span>
+                The Lighthouse Academy
+            </h1>
+            <p>Management System - Quick Start Guide</p>
+        </div>
+
+        <div class="content">
+            <!-- Getting Started Section -->
+            <div class="section">
+                <h2>🚀 Getting Started</h2>
+                <p>Welcome to The Lighthouse Academy Management System! This guide will help you get started with all the features available in the system.</p>
+
+                <div class="highlight">
+                    <strong>✓ Files Ready:</strong> All necessary files (HTML, CSS, JavaScript) are already set up and ready to use. Simply open index.html in your web browser to start using the system.
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Open the Application</h3>
+                            <p>Double-click on <strong>index.html</strong> to open it in your default web browser, or right-click and select "Open with" to choose a specific browser.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Explore the Dashboard</h3>
+                            <p>You'll see the main dashboard with key statistics. The left sidebar contains navigation menu for all sections.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Navigate Between Sections</h3>
+                            <p>Click on any menu item in the sidebar (Students Profile, Attendance, Fee Submission, etc.) to switch between different modules.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Use Filters and Search</h3>
+                            <p>Use the search boxes and dropdown filters to find specific students, records, or information quickly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features Section -->
+            <div class="section">
+                <h2>✨ Key Features</h2>
+                <p>Here are the main features available in your management system:</p>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>📊 Dashboard</h3>
+                        <p>Overview of all important statistics and quick access to common tasks.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>👥 Student Profiles</h3>
+                        <p>Complete database of students with search and filter capabilities.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📋 Attendance</h3>
+                        <p>Track daily attendance with time logs and remarks.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>💰 Fee Management</h3>
+                        <p>Monitor fee submissions and payment status for all students.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📈 Reports</h3>
+                        <p>Generate daily, weekly, and monthly reports with PDF export.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📅 Calendar</h3>
+                        <p>View schedule, events, and important dates at a glance.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🎓 Admissions</h3>
+                        <p>Manage new student applications and admission fees.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🏢 Departments</h3>
+                        <p>View and manage all academy departments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Tasks Section -->
+            <div class="section">
+                <h2>💼 Common Tasks</h2>
+
+                <h3 style="color: #1f2937; margin-top: 1.5rem; margin-bottom: 1rem;">How to Search for a Student</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p>Click on "Students Profile" in the sidebar</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p>Type the student name in the search box at the top</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p>Results will filter automatically as you type</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #1f2937; margin-top: 1.5rem; margin-bottom: 1rem;">How to Check Attendance</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p>Go to "Attendance" section from the menu</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p>Select a date using the date picker</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p>Filter by department if needed</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <p>View attendance status for all students on that date</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #1f2937; margin-top: 1.5rem; margin-bottom: 1rem;">How to View Fee Status</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p>Navigate to "Fee Submission" section</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p>Search for a student or filter by payment status</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p>View total fee, paid amount, and pending balance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #1f2937; margin-top: 1.5rem; margin-bottom: 1rem;">How to Generate Reports</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p>Go to "Reports" section</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p>Click on the report type tab (Daily, Weekly, or Monthly)</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p>Click "Download PDF" to export the report</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips & Tricks Section -->
+            <div class="section">
+                <h2>💡 Tips & Tricks</h2>
+
+                <div class="highlight">
+                    <strong>Keyboard Shortcut:</strong> Press <strong>Ctrl + K</strong> (or <strong>Cmd + K</strong> on Mac) to quickly focus on the search box from any page.
+                </div>
+
+                <div class="highlight">
+                    <strong>Mobile Access:</strong> The system is fully responsive! You can access it from mobile devices. Click the menu icon (☰) to toggle the sidebar on smaller screens.
+                </div>
+
+                <div class="highlight">
+                    <strong>Navigation History:</strong> Your last viewed section is automatically saved. When you return to the page, it will show the section you were last viewing.
+                </div>
+
+                <div class="highlight">
+                    <strong>Data Filtering:</strong> You can combine multiple filters (search + department + status) to narrow down results quickly.
+                </div>
+            </div>
+
+            <!-- System Information -->
+            <div class="section">
+                <h2>ℹ️ System Information</h2>
+                <p><strong>Academy Name:</strong> The Lighthouse Academy for English Language and IT</p>
+                <p><strong>System Version:</strong> 1.0.0</p>
+                <p><strong>Last Updated:</strong> June 4, 2026</p>
+                <p><strong>Browser Compatibility:</strong> Chrome, Firefox, Safari, Edge (all modern versions)</p>
+
+                <div class="code-block">
+Files included:
+├── index.html (Main application file)
+├── style.css (Styling and layout)
+├── script.js (Interactive features)
+├── README.md (Detailed documentation)
+└── QUICKSTART.html (This file)
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="section">
+                <h2>🆘 Need Help?</h2>
+                <p>If you encounter any issues:</p>
+                <ul style="margin-left: 2rem; color: #6b7280;">
+                    <li style="margin: 0.5rem 0;">Make sure JavaScript is enabled in your browser</li>
+                    <li style="margin: 0.5rem 0;">Try refreshing the page (F5 or Ctrl+R)</li>
+                    <li style="margin: 0.5rem 0;">Clear your browser cache if you see outdated content</li>
+                    <li style="margin: 0.5rem 0;">Check that all files (HTML, CSS, JS) are in the same folder</li>
+                    <li style="margin: 0.5rem 0;">For detailed documentation, read the README.md file</li>
+                </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="openApplication()">
+                    ▶️ Open Application
+                </button>
+                <button class="btn btn-secondary" onclick="openReadme()">
+                    📖 View Documentation
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>© 2026 The Lighthouse Academy</strong></p>
+            <p>For English Language and IT Excellence</p>
+            <p style="font-size: 0.85rem; margin-top: 1rem;">Professional Management System v1.0.0</p>
+        </div>
+    </div>
+
+    <script>
+        function openApplication() {
+            // Open the main application
+            window.location.href = 'index.html';
+        }
+
+        function openReadme() {
+            alert('Open README.md file with a text editor to view detailed documentation.\n\nFeatures:\n- Complete user guide\n- Feature explanations\n- Customization tips\n- Browser compatibility\n- Future enhancements');
+        }
+    </script>
+</body>
+</html>

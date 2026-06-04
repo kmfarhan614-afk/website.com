@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lighthouse Academy - English Language & IT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Lighthouse</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#students" class="nav-link" data-section="students"><i class="fas fa-user-graduate"></i> Students Profile</a></li>
+                    <li><a href="#attendance" class="nav-link" data-section="attendance"><i class="fas fa-clipboard-list"></i> Attendance</a></li>
+                    <li><a href="#fees" class="nav-link" data-section="fees"><i class="fas fa-money-bill-wave"></i> Fee Submission</a></li>
+                    <li><a href="#reports" class="nav-link" data-section="reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                    <li><a href="#calendar" class="nav-link" data-section="calendar"><i class="fas fa-calendar-alt"></i> Calendar & Schedule</a></li>
+                    <li><a href="#admissions" class="nav-link" data-section="admissions"><i class="fas fa-file-invoice-dollar"></i> New Admissions</a></li>
+                    <li><a href="#departments" class="nav-link" data-section="departments"><i class="fas fa-sitemap"></i> Departments</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User">
+                    <div>
+                        <p>Admin User</p>
+                        <small>Manager</small>
+                    </div>
+                </div>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <h1>The Lighthouse Academy</h1>
+                    <p class="subtitle">English Language & IT Excellence</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="header-icons">
+                        <button><i class="fas fa-bell"></i><span class="badge">3</span></button>
+                        <button><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="section active">
+                    <div class="section-header">
+                        <h2>Dashboard</h2>
+                        <p>Welcome to Lighthouse Academy Management System</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #FF6B6B;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>850</h3>
+                                <p>Total Students</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #4ECDC4;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>92%</h3>
+                                <p>Attendance Rate</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #FFE66D;">
+                                <i class="fas fa-money-bill"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>$45,230</h3>
+                                <p>Pending Fees</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #95E1D3;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>12</h3>
+                                <p>Departments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="card">
+                            <h3>Recent Activities</h3>
+                            <ul class="activity-list">
+                                <li><span class="badge-small badge-success">New</span> 5 students admitted this week</li>
+                                <li><span class="badge-small badge-info">Fee</span> 12 fee submissions received</li>
+                                <li><span class="badge-small badge-warning">Alert</span> Low attendance in IT-201</li>
+                                <li><span class="badge-small badge-success">Report</span> Monthly report generated</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Quick Access</h3>
+                            <div class="quick-access">
+                                <button class="quick-btn"><i class="fas fa-plus"></i> Add Student</button>
+                                <button class="quick-btn"><i class="fas fa-upload"></i> Upload Fees</button>
+                                <button class="quick-btn"><i class="fas fa-file"></i> Generate Report</button>
+                                <button class="quick-btn"><i class="fas fa-user-plus"></i> New Admission</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Students Profile Section -->
+                <section id="students" class="section">
+                    <div class="section-header">
+                        <h2>Students Profile</h2>
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Student</button>
+                    </div>
+
+                    <div class="filter-bar">
+                        <input type="text" placeholder="Search student by name...">
+                        <select>
+                            <option>All Departments</option>
+                            <option>English Language</option>
+                            <option>IT & Programming</option>
+                            <option>Web Development</option>
+                        </select>
+                        <select>
+                            <option>All Classes</option>
+                            <option>Class 1</option>
+                            <option>Class 2</option>
+                            <option>Class 3</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Roll No.</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Class</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Admission Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Ahmed Hassan</td>
+                                    <td>English Language</td>
+                                    <td>Advanced</td>
+                                    <td>ahmed@email.com</td>
+                                    <td>+966-555-0123</td>
+                                    <td>2026-01-15</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>Fatima Al-Mansouri</td>
+                                    <td>IT & Programming</td>
+                                    <td>Intermediate</td>
+                                    <td>fatima@email.com</td>
+                                    <td>+966-555-0124</td>
+                                    <td>2026-02-20</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>003</td>
+                                    <td>Mohammed Ali</td>
+                                    <td>Web Development</td>
+                                    <td>Beginner</td>
+                                    <td>mohammed@email.com</td>
+                                    <td>+966-555-0125</td>
+                                    <td>2026-03-10</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>Noor Ibrahim</td>
+                                    <td>English Language</td>
+                                    <td>Beginner</td>
+                                    <td>noor@email.com</td>
+                                    <td>+966-555-0126</td>
+                                    <td>2026-03-25</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Attendance Section -->
+                <section id="attendance" class="section">
+                    <div class="section-header">
+                        <h2>Attendance Management</h2>
+                        <button class="btn btn-primary"><i class="fas fa-upload"></i> Upload Attendance</button>
+                    </div>
+
+                    <div class="filter-bar">
+                        <input type="date">
+                        <select>
+                            <option>All Departments</option>
+                            <option>English Language</option>
+                            <option>IT & Programming</option>
+                        </select>
+                        <select>
+                            <option>All Classes</option>
+                            <option>Class 1</option>
+                            <option>Class 2</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Department</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Time In</th>
+                                    <th>Time Out</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ahmed Hassan</td>
+                                    <td>English Language</td>
+                                    <td>2026-06-04</td>
+                                    <td><span class="status-badge present">Present</span></td>
+                                    <td>09:00 AM</td>
+                                    <td>02:00 PM</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Fatima Al-Mansouri</td>
+                                    <td>IT & Programming</td>
+                                    <td>2026-06-04</td>
+                                    <td><span class="status-badge present">Present</span></td>
+                                    <td>09:05 AM</td>
+                                    <td>01:45 PM</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Mohammed Ali</td>
+                                    <td>Web Development</td>
+                                    <td>2026-06-04</td>
+                                    <td><span class="status-badge absent">Absent</span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>Sick Leave</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Fee Submission Section -->
+                <section id="fees" class="section">
+                    <div class="section-header">
+                        <h2>Fee Submission & Payment</h2>
+                        <button class="btn btn-primary"><i class="fas fa-money-bill-wave"></i> Record Payment</button>
+                    </div>
+
+                    <div class="filter-bar">
+                        <input type="text" placeholder="Search by student name...">
+                        <select>
+                            <option>All Status</option>
+                            <option>Paid</option>
+                            <option>Pending</option>
+                            <option>Partial</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Roll No.</th>
+                                    <th>Total Fee</th>
+                                    <th>Paid Amount</th>
+                                    <th>Pending</th>
+                                    <th>Payment Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ahmed Hassan</td>
+                                    <td>001</td>
+                                    <td>$1,500</td>
+                                    <td>$1,500</td>
+                                    <td>$0</td>
+                                    <td>2026-05-20</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-download"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Fatima Al-Mansouri</td>
+                                    <td>002</td>
+                                    <td>$1,500</td>
+                                    <td>$750</td>
+                                    <td>$750</td>
+                                    <td>2026-05-25</td>
+                                    <td><span class="status-badge partial">Partial</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-download"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Mohammed Ali</td>
+                                    <td>003</td>
+                                    <td>$1,500</td>
+                                    <td>$0</td>
+                                    <td>$1,500</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-download"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Reports Section -->
+                <section id="reports" class="section">
+                    <div class="section-header">
+                        <h2>Reports & Analytics</h2>
+                    </div>
+
+                    <div class="reports-tabs">
+                        <button class="tab-btn active" data-tab="daily">Daily Reports</button>
+                        <button class="tab-btn" data-tab="weekly">Weekly Reports</button>
+                        <button class="tab-btn" data-tab="monthly">Monthly Reports</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="daily">
+                            <div class="card">
+                                <h3>Today's Report - June 4, 2026</h3>
+                                <div class="report-stats">
+                                    <div class="report-item">
+                                        <span>Total Students Present:</span>
+                                        <strong>847 / 850</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>Attendance Rate:</span>
+                                        <strong>99.6%</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>Classes Conducted:</span>
+                                        <strong>24</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>New Admissions:</span>
+                                        <strong>2</strong>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary"><i class="fas fa-download"></i> Download PDF</button>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="weekly">
+                            <div class="card">
+                                <h3>Weekly Report - Week of June 2-6, 2026</h3>
+                                <div class="report-stats">
+                                    <div class="report-item">
+                                        <span>Average Attendance:</span>
+                                        <strong>94.2%</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>Total Classes:</span>
+                                        <strong>120</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>New Admissions:</span>
+                                        <strong>8</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>Fees Collected:</span>
+                                        <strong>$12,450</strong>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary"><i class="fas fa-download"></i> Download PDF</button>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="monthly">
+                            <div class="card">
+                                <h3>Monthly Report - June 2026</h3>
+                                <div class="report-stats">
+                                    <div class="report-item">
+                                        <span>Average Attendance:</span>
+                                        <strong>91.8%</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>Total Classes:</span>
+                                        <strong>480</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>New Admissions:</span>
+                                        <strong>35</strong>
+                                    </div>
+                                    <div class="report-item">
+                                        <span>Total Fees Collected:</span>
+                                        <strong>$52,300</strong>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary"><i class="fas fa-download"></i> Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Calendar & Schedule Section -->
+                <section id="calendar" class="section">
+                    <div class="section-header">
+                        <h2>Calendar & Schedule</h2>
+                    </div>
+
+                    <div class="calendar-container">
+                        <div class="calendar-card">
+                            <h3>June 2026</h3>
+                            <table class="calendar-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td class="today">5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td class="event">14</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>17</td>
+                                        <td>18</td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>23</td>
+                                        <td>24</td>
+                                        <td>25</td>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="schedule-card">
+                            <h3>Upcoming Events & Schedule</h3>
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <div class="schedule-time">June 5</div>
+                                    <div class="schedule-details">
+                                        <h4>English Advanced Class</h4>
+                                        <p>9:00 AM - 12:00 PM | Room 101</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">June 7</div>
+                                    <div class="schedule-details">
+                                        <h4>IT Programming Workshop</h4>
+                                        <p>2:00 PM - 4:00 PM | Lab A</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">June 14</div>
+                                    <div class="schedule-details">
+                                        <h4>Monthly Exams</h4>
+                                        <p>9:00 AM - 4:00 PM | All Halls</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">June 21</div>
+                                    <div class="schedule-details">
+                                        <h4>Semester Closing Ceremony</h4>
+                                        <p>3:00 PM - 5:00 PM | Main Hall</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- New Admissions Section -->
+                <section id="admissions" class="section">
+                    <div class="section-header">
+                        <h2>New Student Admissions</h2>
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Admission</button>
+                    </div>
+
+                    <div class="filter-bar">
+                        <input type="text" placeholder="Search admission...">
+                        <select>
+                            <option>All Status</option>
+                            <option>Approved</option>
+                            <option>Pending</option>
+                            <option>Rejected</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Admission ID</th>
+                                    <th>Student Name</th>
+                                    <th>Department</th>
+                                    <th>Admission Fee</th>
+                                    <th>Application Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ADM-2026-001</td>
+                                    <td>Ali Mohammed</td>
+                                    <td>English Language</td>
+                                    <td>$500</td>
+                                    <td>2026-05-30</td>
+                                    <td><span class="status-badge approved">Approved</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-check"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>ADM-2026-002</td>
+                                    <td>Layla Ahmed</td>
+                                    <td>IT & Programming</td>
+                                    <td>$500</td>
+                                    <td>2026-06-01</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-clock"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>ADM-2026-003</td>
+                                    <td>Samir Hassan</td>
+                                    <td>Web Development</td>
+                                    <td>$500</td>
+                                    <td>2026-06-02</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td><button class="action-btn"><i class="fas fa-clock"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Departments Section -->
+                <section id="departments" class="section">
+                    <div class="section-header">
+                        <h2>Departments</h2>
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Department</button>
+                    </div>
+
+                    <div class="departments-grid">
+                        <div class="dept-card">
+                            <div class="dept-icon" style="background: #FF6B6B;">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>English Language</h3>
+                            <p><strong>Students:</strong> 450</p>
+                            <p><strong>Courses:</strong> 8</p>
+                            <p><strong>Staff:</strong> 15</p>
+                            <button class="btn btn-small"><i class="fas fa-arrow-right"></i> Details</button>
+                        </div>
+
+                        <div class="dept-card">
+                            <div class="dept-icon" style="background: #4ECDC4;">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>IT & Programming</h3>
+                            <p><strong>Students:</strong> 280</p>
+                            <p><strong>Courses:</strong> 12</p>
+                            <p><strong>Staff:</strong> 18</p>
+                            <button class="btn btn-small"><i class="fas fa-arrow-right"></i> Details</button>
+                        </div>
+
+                        <div class="dept-card">
+                            <div class="dept-icon" style="background: #FFE66D;">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <p><strong>Students:</strong> 120</p>
+                            <p><strong>Courses:</strong> 6</p>
+                            <p><strong>Staff:</strong> 8</p>
+                            <button class="btn btn-small"><i class="fas fa-arrow-right"></i> Details</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
